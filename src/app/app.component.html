@@ -1,9 +1,8 @@
-<div class="container">
-
-  <app-sign-in></app-sign-in>
-  <hr>
-  <app-login></app-login>
-
+<div class="container pt-5">
+  <ul class="nav nav-tabs">
+    <li class="nav-item"><a class="nav-link" [class.active]="active.signIn" (click)="link('signIn')" >Sign In</a></li>
+    <li class="nav-item"><a class="nav-link" [class.active]="active.create" (click)="link('create')" >Create account</a></li>
+  </ul>
 </div>
 
 <router-outlet></router-outlet>
