@@ -10,11 +10,20 @@ import { HeaderComponent } from './header/header.component';
 import {FormsModule} from "@angular/forms";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+import { MenuComponent } from './menu/menu.component';
+import { LikesComponent } from './likes/likes.component';
+import { PlaylistsComponent } from './playlists/playlists.component';
+import { StreamComponent } from './stream/stream.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     TrackvueComponent,
-    HeaderComponent
+    HeaderComponent,
+    MenuComponent,
+    LikesComponent,
+    PlaylistsComponent,
+    StreamComponent
   ],
   imports: [
     BrowserModule,
