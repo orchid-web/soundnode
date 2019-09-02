@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignInComponent
+    SignInComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
