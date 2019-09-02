@@ -1,12 +1,24 @@
 <div class="offset-3 col-6">
-    <form>
+    <form [formGroup]="signIn" (ngSubmit)="send()">
         <div class="form-group">
             <label for="exampleInputEmail1">Your email address</label>
-            <input type="email" class="form-control col-6" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <input type="email" class="form-control col-6" id="exampleInputEmail1" formControlName="email" placeholder="Enter email"
+            [class.error]="signIn.controls.email.invalid" [class.success]="signIn.controls.email.valid">
+            <div class=" mt-2">
+              <span class="alert alert-danger" role="alert"
+                *ngIf="signIn.controls.email.invalid && signIn.controls.email.touched">A valid email address is
+                required</span>
+            </div>
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Your Password</label>
-            <input type="password" class="form-control col-6" id="exampleInputPassword1" placeholder="Password">
+            <input type="password" class="form-control col-6" id="exampleInputPassword1" formControlName="password" placeholder="Password"
+            [class.error]="signIn.controls.password.invalid" [class.success]="signIn.controls.password.valid">
+            <div class=" mt-2">
+              <span class="alert alert-danger" role="alert"
+                *ngIf="signIn.controls.password.invalid && signIn.controls.password.touched">A valid password is
+                required</span>
+            </div>
         </div>
         <div class="">
             <button type="submit" class="btn btn-warning col-6">Sign In or Connect</button>
