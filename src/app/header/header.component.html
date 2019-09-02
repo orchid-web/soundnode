@@ -1,0 +1,36 @@
+<section class="black">
+    <div class="row">
+        <div class="col-4">
+            <div class="input-group mb-3 ">
+                <input type="text" class="form-control p-3 bg-dark text-white border border-dark"  placeholder="search" [(ngModel)]="trackSearch"
+                    aria-label="Recipient's username" aria-describedby="basic-addon2" >
+                <div class="input-group-append">
+                    <button class="input-group-text bg-dark border-dark" id="basic-addon2"  (click)="Search()">
+                            <fa-icon id="loupe" [icon]="faSearch" ></fa-icon>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col">
+
+        </div>
+
+        <div class="col-1">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle btn-outline-dark" type="button" id="Settings" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <fa-icon id="roueIndentee" [icon]="faCog"></fa-icon>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="Settings">
+                    <a class="dropdown-item" href="#" >about</a>
+                    <a class="dropdown-item" href="#">settings</a>
+                    <a class="dropdown-item" href="#">news</a>
+                    <a class="dropdown-item" href="#">shortcuts</a>
+                    <a class="dropdown-item" href="#" >(shift + ?)</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
