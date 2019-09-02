@@ -7,6 +7,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { LoginComponent } from './login/login.component';
+import {DataService} from './data.service';
+import {HttpClientModule} from '@angular/common/http';
+import { TrackvueComponent } from './trackvue/trackvue.component';
 
 const routes:Routes = [
   {path:'signIn', component:SignInComponent},
@@ -17,16 +20,18 @@ const routes:Routes = [
   declarations: [
     AppComponent,
     SignInComponent,
-    LoginComponent
+    LoginComponent,
+    TrackvueComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
