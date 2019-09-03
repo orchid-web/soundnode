@@ -12,6 +12,7 @@ export class LikesComponent implements OnInit {
   constructor(private data:DataService, private router:Router) { }
 
   ngOnInit() {
+    
   }
 // addLike =() =>{
 //   this.data.postApi('likes', this.track.value).subscribe((res:any)=> {

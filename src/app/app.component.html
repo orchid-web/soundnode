@@ -1,10 +1,24 @@
-
-<app-trackvue></app-trackvue>
-<div class="row">
-  <div class="offset-2 col-10">
-<app-header></app-header>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2 px-0 pt-2 bg-dark">
+      <app-menu (log)="displayForm($event)"></app-menu>
+    </div>
+    <div class="col p-0 body">
+      <app-header></app-header>
+      <app-trackvue *ngIf="!t"></app-trackvue>
+      <div *ngIf="t" class="container pt-5">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link" [class.active]="active.signIn" (click)="link('signIn')">Sign In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [class.active]="active.create" (click)="link('create')">Create
+              account</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
-<app-menu></app-menu>
 
 <router-outlet></router-outlet>
