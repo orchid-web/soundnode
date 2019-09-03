@@ -1,36 +1,31 @@
-<section class="black">
+<header class="pl-5">
     <div class="row">
         <div class="col-4">
-            <div class="input-group mb-3 ">
-                <input type="text" class="form-control p-3 bg-dark text-white border border-dark"  placeholder="search" [(ngModel)]="trackSearch"
-                    aria-label="Recipient's username" aria-describedby="basic-addon2" >
+            <div class="input-group mb-3 py-2">
+                <input type="text" class="form-control p-3 bg-dark text-white border border-dark" placeholder="search"
+                    [(ngModel)]="trackSearch" aria-label="Recipient's username" aria-describedby="basic-addon2">
                 <div class="input-group-append">
-                    <button class="input-group-text bg-dark border-dark" id="basic-addon2"  (click)="Search()">
-                            <fa-icon id="loupe" [icon]="faSearch" ></fa-icon>
+                    <button class="input-group-text bg-dark border-dark" id="basic-addon2" (click)="Search()">
+                        <fa-icon id="loupe" [icon]="faSearch"></fa-icon>
                     </button>
                 </div>
             </div>
-
         </div>
 
-        <div class="col">
-
-        </div>
-
-        <div class="col-1">
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle btn-outline-dark" type="button" id="Settings" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
+        <div class="offset-6 col-1">
+            <div class="dropdown pt-2">
+                <!-- <button class="btn btn-secondary dropdown-toggle btn-outline-dark" type="button" id="Settings"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
                     <fa-icon id="roueIndentee" [icon]="faCog"></fa-icon>
-                </button>
+                <!-- </button>
                 <div class="dropdown-menu" aria-labelledby="Settings">
-                    <a class="dropdown-item" href="#" >about</a>
-                    <a class="dropdown-item" href="#">settings</a>
-                    <a class="dropdown-item" href="#">news</a>
-                    <a class="dropdown-item" href="#">shortcuts</a>
-                    <a class="dropdown-item" href="#" >(shift + ?)</a>
-                </div>
+                    <a class="dropdown-item">about</a>
+                    <a class="dropdown-item">settings</a>
+                    <a class="dropdown-item">news</a>
+                    <a class="dropdown-item">shortcuts</a>
+                    <a class="dropdown-item">(shift + ?)</a>
+                </div> -->
             </div>
         </div>
     </div>
-</section>
+</header>
