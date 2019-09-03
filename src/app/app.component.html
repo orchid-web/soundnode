@@ -1,21 +1,25 @@
-<!-- <div class="container pt-5">
-  <ul class="nav nav-tabs">
-    <li class="nav-item"><a class="nav-link" [class.active]="active.signIn" (click)="link('signIn')" >Sign In</a></li>
-    <li class="nav-item"><a class="nav-link" [class.active]="active.create" (click)="link('create')" >Create account</a></li>
-  </ul>
-</div> -->
 <div class="container">
   <div class="row">
     <div class="col-2">
-      <app-menu></app-menu>
+      <app-menu (log)="displayForm($event)"></app-menu>
     </div>
     <div class="col">
       <app-header></app-header>
-      <app-trackvue></app-trackvue>
+      <app-trackvue *ngIf="!t"></app-trackvue>
+      <div *ngIf="t" class="container pt-5">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link" [class.active]="active.signIn" (click)="link('signIn')">Sign In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [class.active]="active.create" (click)="link('create')">Create
+              account</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
 
-{{ test }}
 
 <router-outlet></router-outlet>
