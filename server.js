@@ -1,5 +1,5 @@
 const express = require('express');
-
+const fs = require ("fs");
 const app = express();
 const bodyparser = require('body-parser');
 
@@ -7,6 +7,7 @@ app.use(bodyparser.urlencoded({ extended: true }));
 
 const users =JSON.parse(fs.readFileSync('public/users.json','utf-8'));
 const tracks=JSON.parse(fs.readFileSync('public/tracks.json','utf-8'));
+app.use(bodyparser.urlencoded({extended : true}));
 
 app.use(function (req, res, next) {
     //Accept ALL origins
@@ -24,5 +25,11 @@ app.get('/', function (req, res) {
     let exResponse = 'server Works!';
     res.json(exResponse);
 })
+app.get('/tracks',function(req,res){
+    let exResponse = tracks ;
+    //Response on json
+    res.json(exResponse);
+})
+
 
 app.listen(8083);
