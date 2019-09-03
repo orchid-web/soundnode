@@ -1,23 +1,27 @@
-<section>
+<section class=container-fluide>
 <div class="row" id="photoAlbum">
     <div class="col-2">
         <img src="./assets/tracks/PixiesDoolittle.jpg">
     </div>
 </div>
 <div class="row" >
-    <div class="col-2" id="Title" class="ligne">
-        <span> Pixies Monkey Gone to Heaven</span>
+    <div class="col-2 ligne" id="Title" >
+        <span>{{this.track.titleTrack}}</span>
     </div>
 </div>
 <div class="row" >
-    <div class="col-2" id="Album" class="ligne" >
-        <span>Titre de l'album Doolittle des Pixies</span>
+    <div class="col-2 ligne" id="Album" >
+        <span>{{this.track.resume}}</span>
     </div>
 </div>
 <div class="row" >
-    <div class="col-2"class="ligne"  >
-
-
+    <div class="col-2 ligne" >
+        <div class="row">
+            <div class="col-2">
+            <fa-icon [icon]="faHeart" (click)="addLike()"></fa-icon></div>
+            <div class='col-2'>
+            <fa-icon [icon]="faBookmark" (click)='addPlaylist ()'></fa-icon></div>
+        </div>
     </div>
 </div>
 </section>

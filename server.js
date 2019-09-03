@@ -43,6 +43,12 @@ app.get('/', function (req, res) {
     let exResponse = 'server Works!';
     res.json(exResponse);
 })
+app.get('/tracks',function(req,res){
+    let exResponse = tracks ;
+    //Response on json
+    res.json(exResponse);
+})
+
 
 // app.post('/likes', function(req,res){
 //     likeCount = 0;

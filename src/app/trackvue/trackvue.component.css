@@ -1,9 +1,28 @@
+.col-2 {
+    padding-right: 0px;
+    padding-right: 0px;
+}
+
 img {
     width: 100%;
 }
 
+#Title {
+    font-size: 15px;
+    color: rgb(238, 226, 226)
 
+}
+
+#Album {
+    font-size : 10px;
+    color: rgb(170, 169, 169)
+}
 .ligne {
     background-color: black;
-    
+    text-align:center !important;
+  }
+
+fa-icon {
+    color: rgb(170, 169, 169)
 }
+
