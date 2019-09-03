@@ -1,22 +1,25 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-likes',
   templateUrl: './likes.component.html',
   styleUrls: ['./likes.component.css']
 })
 export class LikesComponent implements OnInit {
-  @Input() customer
-  customerLikes
-  noLikes = false
-  thisCustomer
-  constructor(private http: HttpClient ) { }
-
-  
+// like = [] ;
+  constructor(private data:DataService, private router:Router) { }
 
   ngOnInit() {
-    this.thisCustomer = this.customer.id
-    console.log(this.thisCustomer);
+    
   }
+// addLike =() =>{
+//   this.data.postApi('likes', this.track.value).subscribe((res:any)=> {
+//     if(for ){
+    
+//     }
+//   })
 
-}
+// }
+ }
