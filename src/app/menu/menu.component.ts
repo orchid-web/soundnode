@@ -5,12 +5,7 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
-<<<<<<< HEAD
 import { Router } from '@angular/router'
-=======
-import { Router } from '@angular/router';
-
->>>>>>> christophe
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -27,11 +22,7 @@ export class MenuComponent implements OnInit {
   linkLog = false;// Affiche login
   @Output() log:EventEmitter<Boolean> = new EventEmitter();
 
-<<<<<<< HEAD
-  constructor(private router:Router) { }
-=======
   constructor(private router: Router) { }
->>>>>>> christophe
 
   ngOnInit() {
   }
