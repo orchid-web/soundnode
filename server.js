@@ -73,14 +73,11 @@ app.get('/tracks', function (req, res) {
 */
 app.post('/signIn', (req, res) => {
     const data = req.body;
-    console.dir(data.email);
     result = {};
     result.allowd = false;
     const u = users.find(x => x.email == data.email && x.password == data.password);
-    console.dir(u);
+
     if (u) {
-        
-    console.dir("test");
         result.allowd = true;
         u.token = (Math.random() * 10 + Math.random() * 10).toString(26);
         result.token = u.token;
@@ -119,6 +116,7 @@ app.post('/login', (req, res) => {
         users.push({
             email: data.email,
             password: data.password,
+            age: data.age,
             token: ''
         })
         fs.writeFileSync('public/users.json', JSON.stringify(users));
