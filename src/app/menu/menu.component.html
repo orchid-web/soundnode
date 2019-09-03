@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="container ">
             <div class="col-2 bg-dark" >
                 <div><fa-icon [icon]="faAngleLeft"> </fa-icon><fa-icon [icon]="faAngleRight"></fa-icon></div>
@@ -6,5 +7,45 @@
                 <li routerLink="/stream"><fa-icon [icon]="faCloud"></fa-icon>  stream</li>
                 <li routerLink="/likes"><fa-icon [icon]="faHeart"></fa-icon> likes</li>
                 <li routerLink="/playlists"><fa-icon [icon]="faBookmark"></fa-icon> playlists</li>
+=======
+<div class="container text-white">
+    <div class="row pt-1">
+        <div class="offset-1 col-1">
+            <fa-icon [icon]="faAngleLeft"> </fa-icon>
+        </div>
+        <div class="col-1">
+            <fa-icon [icon]="faAngleRight"></fa-icon>
+        </div>
+    </div>
+    <div class="row py-4">
+        <div class="col m-0">
+            <div class="iconUser">
+                <fa-icon [icon]="faUserCircle"></fa-icon>
+>>>>>>> c542e0d618a5c5c65b2b91ebfe6857a70ccb5f88
             </div>
+        </div>
+        <div class="col-7">
+            <div class="row pt-3">
+                <h3>pseudo</h3>
+            </div>
+            <div class="row">
+                <span *ngIf="!linkLog" (click)="logIn()">log in</span>
+                <span *ngIf="linkLog" (click)="logOut()">log out</span>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h3>MAIN</h3>
+        <ul>
+            <li>
+                <fa-icon [icon]="faCloud" routerLink="/stream"></fa-icon> stream
+            </li>
+            <li>
+                <fa-icon [icon]="faHeart" routerLink="/likes"></fa-icon> likes
+            </li>
+            <li>
+                <fa-icon [icon]="faBookmark" routerLink="/playlists"></fa-icon> playlists
+            </li>
+        </ul>
+    </div>
 </div>

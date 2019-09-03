@@ -1,7 +1,4 @@
-.black{
-    background-color:black;
-    border : none;
-    }
+
 
 #loupe{
     color : grey
@@ -14,5 +11,6 @@
 }
 
 #roueIndentee{
-    color : grey
+    color : grey;
+    font-size : 2rem;
 }

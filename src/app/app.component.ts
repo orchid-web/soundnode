@@ -8,9 +8,9 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   active = {
-    signIn: false,
-    create: false
   }
+  log:Boolean;
+
   constructor(private router: Router) {
 
   }
@@ -22,5 +22,14 @@ export class AppComponent {
     }
     this.active[link] = true;
     this.router.navigate(['/'+link])
+  }
+
+  displayForm = (t) => {
+    this.log = t;
+    this.active = {
+      signIn: true,
+      create: false
+    }
+    this.router.navigate(['/signIn'])
   }
 }
