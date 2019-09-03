@@ -1,3 +1,9 @@
+<div class="container pt-5">
+  <ul class="nav nav-tabs">
+    <li class="nav-item"><a class="nav-link" [class.active]="active.signIn" (click)="link('signIn')" >Sign In</a></li>
+    <li class="nav-item"><a class="nav-link" [class.active]="active.create" (click)="link('create')" >Create account</a></li>
+  </ul>
+</div>
 
 <app-trackvue></app-trackvue>
 <div class="row">
