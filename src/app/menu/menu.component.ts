@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { faCloud } from '@fortawesome/free-solid-svg-icons';
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
@@ -17,10 +17,22 @@ export class MenuComponent implements OnInit {
   faHeart = faHeart;
   faBookmark = faBookmark;
   faUserCircle = faUserCircle;
+  linkLog = false;// Affiche login
+  // @Output() test = 5;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  logIn = () => {
+    alert('connexion');
+    this.linkLog = true;
+  }
+
+  logOut = () => {
+    alert('Deconnexion');
+    this.linkLog = false;
   }
 
 }

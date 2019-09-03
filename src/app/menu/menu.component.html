@@ -1,17 +1,36 @@
-<div class="row">
-    <fa-icon [icon]="faAngleLeft"> </fa-icon>
-    <fa-icon [icon]="faAngleRight"></fa-icon>
-</div>
-<div>
-    <fa-icon [icon]="faUserCircle"></fa-icon> utilisateur
-</div>
-<div>MAIN</div>
-<div>
-    <fa-icon [icon]="faCloud"></fa-icon> stream
-</div>
-<div>
-    <fa-icon [icon]="faHeart"></fa-icon> likes
-</div>
-<div>
-    <fa-icon [icon]="faBookmark"></fa-icon> playlists
+<div class="container bg-dark text-white">
+    <div class="row">
+        <div class="col">
+            <fa-icon [icon]="faAngleLeft"> </fa-icon>
+        </div>
+        <div class="col">
+            <fa-icon [icon]="faAngleRight"></fa-icon>
+        </div>
+    </div>
+    <div class="row py-4">
+        <div class="col-6">
+            <div class="iconUser">
+                <fa-icon [icon]="faUserCircle"></fa-icon>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="row">
+                pseudo utilisateur
+            </div>
+            <div class="row">
+                <span *ngIf="!linkLog" (click)="logIn()">log in</span>
+                <span *ngIf="linkLog" (click)="logOut()">log out</span>
+            </div>
+        </div>
+    </div>
+    <div>MAIN</div>
+    <div>
+        <fa-icon [icon]="faCloud"></fa-icon> stream
+    </div>
+    <div>
+        <fa-icon [icon]="faHeart"></fa-icon> likes
+    </div>
+    <div>
+        <fa-icon [icon]="faBookmark"></fa-icon> playlists
+    </div>
 </div>
