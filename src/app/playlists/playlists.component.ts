@@ -8,15 +8,9 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./playlists.component.css']
 })
 export class PlaylistsComponent implements OnInit {
-  @Input() customer
-  customerPlaylists
-  noPlaylists = false
-  thisCustomer
   constructor(private http: HttpClient ) { }
 
   ngOnInit() {
-    this.thisCustomer = this.customer.id
-    console.log(this.thisCustomer);
   }
   // findPlaylists = () => {
   //   this.orderdata.getApi('stream/' + this.thisCustomer).subscribe((res: any) => {

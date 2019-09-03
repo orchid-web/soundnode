@@ -5,8 +5,7 @@
     </div>
     <div class="col p-0 body">
       <app-header></app-header>
-      <app-trackvue *ngIf="!t"></app-trackvue>
-      <div *ngIf="t" class="container pt-5">
+      <div *ngIf="log" class="container pt-5">
         <ul class="nav nav-tabs">
           <li class="nav-item">
             <a class="nav-link" [class.active]="active.signIn" (click)="link('signIn')">Sign In</a>
