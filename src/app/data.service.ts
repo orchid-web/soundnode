@@ -16,4 +16,11 @@ export class DataService {
   postApi = (lien,data)=> {
     return this.http.post(this.baseUrl+lien,data);
   }
+  
+  isLogged   =() => {
+    let token = localStorage.getItem('token');
+    let userId = localStorage.getItem('userId');
+    return this.http.post(this.baseUrl+"isLogged",{token: token, id : userId})
+  }
+
 }
