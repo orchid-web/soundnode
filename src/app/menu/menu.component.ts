@@ -39,5 +39,4 @@ export class MenuComponent implements OnInit {
     this.log.emit(this.linkLog);
     this.router.navigate(['/'])
   }
-
 }

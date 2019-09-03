@@ -18,6 +18,7 @@ import { StreamComponent } from './stream/stream.component';
 import { DataService } from './data.service';
 
 const routes:Routes = [
+  {path:'', component:StreamComponent},
   {path:'signIn', component:SignInComponent},
   {path:'create', component:LoginComponent},
   {path:'playlists', component:PlaylistsComponent},
