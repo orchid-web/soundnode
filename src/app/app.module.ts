@@ -14,7 +14,6 @@ import { MenuComponent } from './menu/menu.component';
 import { LikesComponent } from './likes/likes.component';
 import { PlaylistsComponent } from './playlists/playlists.component';
 import { StreamComponent } from './stream/stream.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,4 +34,6 @@ import { StreamComponent } from './stream/stream.component';
   providers: [DataService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+
+}

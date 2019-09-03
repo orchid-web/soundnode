@@ -5,6 +5,7 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router'
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -18,7 +19,7 @@ export class MenuComponent implements OnInit {
   faBookmark = faBookmark;
   faUserCircle = faUserCircle;
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
   }
