@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -17,9 +17,9 @@ import { PlaylistsComponent } from './playlists/playlists.component';
 import { StreamComponent } from './stream/stream.component';
 import { DataService } from './data.service';
 
-const routes:Routes = [
-  {path:'signIn', component:SignInComponent},
-  {path:'create', component:LoginComponent}
+const routes: Routes = [
+  { path: 'signIn', component: SignInComponent },
+  { path: 'create', component: LoginComponent }
 ]
 
 @NgModule({
