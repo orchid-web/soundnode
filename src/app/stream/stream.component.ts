@@ -14,10 +14,8 @@ export class StreamComponent implements OnInit {
   tracks
 
   constructor(private data: DataService, private http: HttpClient) {
-
     this.http.get("http://localhost:8083/tracks").subscribe((res: TrackModel) => {
       this.tracks = res;
-      console.log(this.tracks);
     })
   }
 

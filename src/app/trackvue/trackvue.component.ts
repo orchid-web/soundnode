@@ -18,12 +18,9 @@ export class TrackvueComponent implements OnInit {
 
 
   constructor(private data: DataService, private http: HttpClient) {
-    console.log(this.track);
   }
 
-
   ngOnInit() {
-
   }
 
   addLike = () => {
