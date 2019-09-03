@@ -21,7 +21,10 @@ import { StreamComponent } from './stream/stream.component';
 
 const routes:Routes = [
   {path:'signIn', component:SignInComponent},
-  {path:'create', component:LoginComponent}
+  {path:'create', component:LoginComponent},
+  {path:'playlists', component:PlaylistsComponent},
+  {path:'stream', component:StreamComponent},
+  {path:'likes', component:LikesComponent},
 ]
 @NgModule({
   declarations: [
