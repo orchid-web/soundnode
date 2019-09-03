@@ -6,6 +6,8 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router'
+import { DataService } from '../data.service';
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -22,7 +24,7 @@ export class MenuComponent implements OnInit {
   linkLog = false;// Affiche login
   @Output() log:EventEmitter<Boolean> = new EventEmitter();
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private data: DataService) { }
 
   ngOnInit() {
   }
@@ -37,6 +39,11 @@ export class MenuComponent implements OnInit {
     alert('Deconnexion');
     this.linkLog = false;
     this.log.emit(this.linkLog);
-    this.router.navigate(['/'])
+    this.router.navigate(['/']);
+    this.data.postApi('logOut',{}).subscribe((res: any) => {
+      if(res.allowd) {
+        alert('erreur de deconnexion');
+      }
+    })
   }
 }
