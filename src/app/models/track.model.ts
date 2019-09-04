@@ -6,4 +6,5 @@ export interface TrackModel {
     duree;
     nbLikes;
     resume;
+    url;
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { HttpClient } from '@angular/common/http';
-import { TrackModel } from '../models/track.model';
+import { TrackModel } from '../Models/track.model';
 
 @Component({
   selector: 'app-stream',
