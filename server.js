@@ -49,18 +49,25 @@ app.get('/tracks', function (req, res) {
     res.json(exResponse);
 })
 
+app.get('/likes', function (req, res) {
+    let exResponse = 'server Works!';
+    res.json(exResponse);
+})
+
 //pour ajouter un like au tableau likes.json
-// app.post('/likes', function (req, res) {
-//     let data = req.body;
-//     let currentIdTrack = userLike.find(x => x.idTrack == data.idTrack);
-//     if (currentIdTrack) {
-//         this.likes.likeCount = ++;
-//         likes.push({ ...data });
-//         fs.writeFileSync('public/likes.json', JSON.stringify(likes));
-//         res.json({ error: false });
-//     }
-//     else{res.json({error:true})}
-// })
+app.post('/likes', function (req, res) {
+    const dataLike = req.body;
+   console.log (dataLike)
+    result = {};
+    result.error = false;
+   
+    likes.push({ 
+       dataLike
+    })
+        fs.writeFileSync('public/likes.json', JSON.stringify(likes));
+     res.json(dataLike.userId);   
+    
+})
 
 app.post('/isLogged', function (req, res) {
     let data = req.body;

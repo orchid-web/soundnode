@@ -17,7 +17,7 @@ export class TrackvueComponent implements OnInit {
   faBookmark = faBookmark;
 
 
-  constructor(private data: DataService, private http: HttpClient) {}
+  constructor(private data: DataService, private http: HttpClient) { }
 
 
   ngOnInit() {
@@ -25,13 +25,23 @@ export class TrackvueComponent implements OnInit {
   }
 
   addLike = () => {
-    let nbLikes=0;
-    alert(this.track.idTrack);
-    nbLikes = this.track.nbLikes;
-    nbLikes ++;
+    let test = ({userId:1, idTrack:1});
+    this.data.postApi('likes', test).subscribe((res: any) => {
+      if (res.error) {
+        alert("Error insertion");
+      }
+      else {
+        alert("like ajouté")
+      }
+    })
+
+    //let nbLikes=0;
+    // alert(this.track.idTrack);
+    // nbLikes = this.track.nbLikes;
+    // nbLikes ++;
     //pousser nbLikes sur server tracks.json
     //pousser l'Id track dans like.json avec comme id l'id User dans likes.json
-     alert (nbLikes);
+    //alert (nbLikes);
   }
 
   addPlaylist = () => {
