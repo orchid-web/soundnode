@@ -17,12 +17,7 @@ export class TrackvueComponent implements OnInit {
   faBookmark = faBookmark;
 
 
-<<<<<<< HEAD
-  constructor(private data: DataService, private http: HttpClient) {
-  }
-=======
   constructor(private data: DataService, private http: HttpClient) {}
->>>>>>> master
 
   ngOnInit() {
   }
