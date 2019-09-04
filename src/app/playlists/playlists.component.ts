@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { DataService } from '../data.service';
 
 
 @Component({
@@ -8,7 +9,10 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./playlists.component.css']
 })
 export class PlaylistsComponent implements OnInit {
-  constructor(private http: HttpClient ) { }
+
+  constructor(private http: HttpClient, private data: DataService) {
+    this.data.observableNavLog.next(false);
+  }
 
   ngOnInit() {
   }

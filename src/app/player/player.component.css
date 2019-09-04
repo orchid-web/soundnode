@@ -1,0 +1,26 @@
+.player {
+    width : 100%;
+    background-color: black;
+    color: #Fff
+}
+.progress-volume {
+    position: relative;
+    width: 100%;
+    background-color: gray;
+    height: 5px;
+    margin-top: 10px
+}
+.progress-volume-dynamic {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 10%;
+    height: 5px;
+    background-color: #fff
+}
+
+fa-icon {
+    color : white;
+    font-size : 5rem;
+    z-index : 0;
+}

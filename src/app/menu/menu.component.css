@@ -1,3 +1,7 @@
 .iconUser {
     font-size : 4rem;
 }
+
+li {
+    list-style: none;
+}

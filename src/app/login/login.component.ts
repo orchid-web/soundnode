@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DataService } from '../data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,13 +16,19 @@ export class LoginComponent implements OnInit {
     age:['',[Validators.required, Validators.pattern("([0-9]{1,2})"), Validators.minLength(6)]]
   });
 
-  constructor(private l:FormBuilder) { }
+  constructor(private l:FormBuilder, private data: DataService, private router:Router) { }
 
   ngOnInit() {
   }
 
   send = () => {
-
+    //Avec la deuxieme methode
+    this.data.postApi('login',{email:this.login.value.email,password:this.login.value.password}).subscribe((res: any) => {
+      if(res.allowd) {
+        alert('erreur de connexion');
+      } else {
+        this.router.navigate(['/signIn']);
+      }
+    })
   }
-
 }
