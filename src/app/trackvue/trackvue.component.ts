@@ -25,8 +25,7 @@ export class TrackvueComponent implements OnInit {
   }
 
   addLike = () => {
-    let test = ({userId:1, idTrack:1});
-    this.data.postApi('likes', test).subscribe((res: any) => {
+    this.data.postApi('likes', { userId: localStorage.getItem("userId"), idTrack: this.track.idTrack }).subscribe((res: any) => {
       if (res.error) {
         alert("Error insertion");
       }

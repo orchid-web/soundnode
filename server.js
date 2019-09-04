@@ -62,7 +62,8 @@ app.post('/likes', function (req, res) {
     result.error = false;
    
     likes.push({ 
-       dataLike
+       userId: dataLike.userId,
+       idTrack: dataLike.idTrack
     })
         fs.writeFileSync('public/likes.json', JSON.stringify(likes));
      res.json(dataLike.userId);   
