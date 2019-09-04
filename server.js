@@ -22,10 +22,10 @@ const users = JSON.parse(fs.readFileSync('public/users.json', 'utf-8'));
 const tracks = JSON.parse(fs.readFileSync('public/tracks.json', 'utf-8'));
 
 //ajout du fichier likes.json dans public
-const likes=JSON.parse(fs.readFileSync('public/likes.json','utf-8'));
+const likes = JSON.parse(fs.readFileSync('public/likes.json', 'utf-8'));
 
 //Pour que notre app web nodeJs accepte les datas en POST
-app.use(bodyparser.urlencoded({extended : true}));
+app.use(bodyparser.urlencoded({ extended: true }));
 
 app.use(function (req, res, next) {
     //Accept ALL origins
@@ -43,22 +43,23 @@ app.get('/', function (req, res) {
     let exResponse = 'server Works!';
     res.json(exResponse);
 })
-app.get('/tracks',function(req,res){
-    let exResponse = tracks ;
+app.get('/tracks', function (req, res) {
+    let exResponse = tracks;
     //Response on json
     res.json(exResponse);
 })
 
-
-// app.post('/likes', function(req,res){
-//     likeCount = 0;
+//pour ajouter un like au tableau likes.json
+// app.post('/likes', function (req, res) {
 //     let data = req.body;
-//     let currentIdTrack = userLike.find(x=>x.idTrack ==data.idTrack);
-//     if(currentIdTrack){ 
-//         likes[]likeCount = ++;
-//         likes.push({...data});
-//         fs.writeFileSync('public/likes.json', JSON.stringify(users));
+//     let currentIdTrack = userLike.find(x => x.idTrack == data.idTrack);
+//     if (currentIdTrack) {
+//         this.likes.likeCount = ++;
+//         likes.push({ ...data });
+//         fs.writeFileSync('public/likes.json', JSON.stringify(likes));
+//         res.json({ error: false });
 //     }
+//     else{res.json({error:true})}
 // })
 
 app.post('/isLogged', function (req, res) {
