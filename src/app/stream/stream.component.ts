@@ -17,6 +17,7 @@ export class StreamComponent implements OnInit {
     this.http.get("http://localhost:8083/tracks").subscribe((res: TrackModel) => {
       this.tracks = res;
     })
+    this.data.observableNavLog.next(false);
   }
 
   ngOnInit() {

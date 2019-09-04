@@ -26,7 +26,7 @@ export class SignInComponent implements OnInit {
         localStorage.setItem("userId", res.id);
         localStorage.setItem("token", res.token);
         this.router.navigate(['/stream']);
-        this.data.observableLog.next(false);
+        this.data.observableNavLog.next(false);
         this.data.observableLinkLog.next(true);
       } else {
         alert('erreur de connexion');

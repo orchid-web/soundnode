@@ -6,8 +6,8 @@
     <div class="col p-0 body">
       <app-header></app-header>
       
-      <div *ngIf="log" class="container pt-5">
-        <ul class="nav nav-tabs">
+      <div *ngIf="navLog" class="container pt-5">
+        <ul class="nav nav-tabs text-white">
           <li class="nav-item">
             <a class="nav-link" [class.active]="active.signIn" (click)="link('signIn')">Sign In</a>
           </li>

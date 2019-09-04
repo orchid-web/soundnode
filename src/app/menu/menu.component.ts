@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { faCloud } from '@fortawesome/free-solid-svg-icons';
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
@@ -21,30 +21,25 @@ export class MenuComponent implements OnInit {
   faHeart = faHeart;
   faBookmark = faBookmark;
   faUserCircle = faUserCircle;
-  linkLog:Boolean;
+  linkLog: Boolean;
 
-  constructor(private router: Router, private data: DataService) { }
-
-  ngOnInit() {
-    this.data.observableLinkLog.subscribe((valeur)=> {
+  constructor(private router: Router, private data: DataService) {
+    this.data.obervableObserveLinkLog.subscribe((valeur) => {
       this.linkLog = valeur;
-    })
+    });
   }
 
+  ngOnInit() { }
+
   logIn = () => {
-    alert('connexion');
-    this.data.observableLog.next(true);
-    // this.linkLog = true;
+    this.data.observableNavLog.next(true);
     this.router.navigate(['/signIn']);
   }
 
   logOut = () => {
-    alert('Deconnexion');
-    // this.linkLog = false;
-    
     this.router.navigate(['/']);
-    this.data.postApi('logOut',{}).subscribe((res: any) => {
-      if(res.allowd) {
+    this.data.postApi('logOut', {"token":localStorage.getItem("token")}).subscribe((res: any) => {
+      if (res.allowd) {
         alert('erreur de deconnexion');
       } else {
         localStorage.removeItem("userId");

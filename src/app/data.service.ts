@@ -7,9 +7,9 @@ import { Subject } from 'rxjs';
 })
 export class DataService {
   baseUrl = "http://localhost:8083/";
-  observableLog : Subject<Boolean> = new Subject<Boolean>();
+  observableNavLog : Subject<Boolean> = new Subject<Boolean>();
   observableLinkLog : Subject<Boolean> = new Subject<Boolean>();
-  linkLog = false;// Affiche login
+  obervableObserveLinkLog : Subject<Boolean> = new Subject<Boolean>();
 
   constructor(private http: HttpClient) { }
 

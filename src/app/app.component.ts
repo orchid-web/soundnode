@@ -9,16 +9,22 @@ import { DataService } from './data.service';
 })
 export class AppComponent implements OnInit {
   active = {};
-  log:Boolean;
+  navLog: Boolean;//Menu login create
+  linkLog: Boolean;// Lien log in log out
 
   constructor(private router: Router, private data: DataService) {
   }
 
   ngOnInit(): void {
-    this.log = false;
-    this.data.observableLog.subscribe((valeur)=> {
-      this.log = valeur;
-    })
+    this.navLog = false;
+    this.data.observableNavLog.subscribe((valeur) => {
+      this.navLog = valeur;
+    });
+
+    this.data.observableLinkLog.subscribe((valeur) => {
+      this.linkLog = valeur;
+      this.data.obervableObserveLinkLog.next(valeur);
+    });
   }
 
   link = (link) => {
@@ -27,11 +33,11 @@ export class AppComponent implements OnInit {
       create: false
     }
     this.active[link] = true;
-    this.router.navigate(['/'+link])
+    this.router.navigate(['/' + link])
   }
 
   displayForm = (t) => {
-    this.log = t;
+    this.navLog = t;
     this.active = {
       signIn: true,
       create: false

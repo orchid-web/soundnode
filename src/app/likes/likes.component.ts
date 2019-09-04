@@ -8,18 +8,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./likes.component.css']
 })
 export class LikesComponent implements OnInit {
-// like = [] ;
-  constructor(private data:DataService, private router:Router) { }
+  // like = [] ;
+  constructor(private data: DataService, private router: Router) {
+    this.data.observableNavLog.next(false);
+  }
 
   ngOnInit() {
-    
   }
-// addLike =() =>{
-//   this.data.postApi('likes', this.track.value).subscribe((res:any)=> {
-//     if(for ){
-    
-//     }
-//   })
+  // addLike =() =>{
+  //   this.data.postApi('likes', this.track.value).subscribe((res:any)=> {
+  //     if(for ){
 
-// }
- }
+  //     }
+  //   })
+
+  // }
+}
