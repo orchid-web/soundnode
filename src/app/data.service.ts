@@ -8,6 +8,8 @@ import { Subject } from 'rxjs';
 export class DataService {
   baseUrl = "http://localhost:8083/";
   observableLog : Subject<Boolean> = new Subject<Boolean>();
+  observableLinkLog : Subject<Boolean> = new Subject<Boolean>();
+  linkLog = false;// Affiche login
 
   constructor(private http: HttpClient) { }
 

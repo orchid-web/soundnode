@@ -21,28 +21,35 @@ export class MenuComponent implements OnInit {
   faHeart = faHeart;
   faBookmark = faBookmark;
   faUserCircle = faUserCircle;
-  linkLog = false;// Affiche login
+  linkLog:Boolean;
 
   constructor(private router: Router, private data: DataService) { }
 
   ngOnInit() {
+    this.data.observableLinkLog.subscribe((valeur)=> {
+      this.linkLog = valeur;
+    })
   }
 
   logIn = () => {
     alert('connexion');
     this.data.observableLog.next(true);
-    this.linkLog = true;
+    // this.linkLog = true;
     this.router.navigate(['/signIn']);
   }
 
   logOut = () => {
     alert('Deconnexion');
-    this.linkLog = false;
+    // this.linkLog = false;
     
     this.router.navigate(['/']);
     this.data.postApi('logOut',{}).subscribe((res: any) => {
       if(res.allowd) {
         alert('erreur de deconnexion');
+      } else {
+        localStorage.removeItem("userId");
+        localStorage.removeItem("token");
+        this.data.observableLinkLog.next(false);
       }
     })
   }

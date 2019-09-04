@@ -23,10 +23,11 @@ export class SignInComponent implements OnInit {
     //Avec la deuxieme methode
     this.data.postApi('signIn', { email: this.signIn.value.email, password: this.signIn.value.password }).subscribe((res: any) => {
       if (res.allowd) {
-        localStorage.setItem("email", res.email);
+        localStorage.setItem("userId", res.id);
         localStorage.setItem("token", res.token);
         this.router.navigate(['/stream']);
         this.data.observableLog.next(false);
+        this.data.observableLinkLog.next(true);
       } else {
         alert('erreur de connexion');
       }

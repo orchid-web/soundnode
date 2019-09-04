@@ -4,7 +4,7 @@
         "email": "cricri@toto.fr",
         "password": "abcd12",
         "age": "20",
-        "token": "7.g9dmj6f9pfe"
+        "token": "a.246f7a3beb"
     },
     {
         "id": "2",
@@ -28,18 +28,9 @@
         "token": ""
     },
     {
-        "email": "dsfdsf@dsfdsf.fr",
-        "password": "dgdsf21",
-        "token": ""
-    },
-    {
-        "email": "test@dfsd.fr",
-        "password": "fgdsgsdfgs2d1",
-        "token": ""
-    },
-    {
-        "email": "fgfdg@fgfg.fr",
-        "password": "fdgsdsfgfd21",
+        "id": 5,
+        "email": "test@test.fr",
+        "password": "cbvnb12",
         "token": ""
     }
 ]

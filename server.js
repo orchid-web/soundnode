@@ -7,15 +7,6 @@ const fs = require("fs");
 
 const bodyparser = require('body-parser');
 
-//Nombre aléatoire
-const rand = function () {
-    return Math.random().toString(36).substr(2);
-};
-
-const token = function () {
-    return rand() + rand(); // to make it longer
-};
-
 app.use(bodyparser.urlencoded({ extended: true }));
 
 const users = JSON.parse(fs.readFileSync('public/users.json', 'utf-8'));
@@ -69,7 +60,7 @@ app.get('/tracks', function (req, res) {
 /*
     /signIn
     req => {email, password}
-    res => {allowd : true|false, token}
+    res => {allowd : true|false, token,id}
 */
 app.post('/signIn', (req, res) => {
     const data = req.body;
@@ -81,6 +72,7 @@ app.post('/signIn', (req, res) => {
         result.allowd = true;
         u.token = (Math.random() * 10 + Math.random() * 10).toString(26);
         result.token = u.token;
+        result.id = u.id;
         fs.writeFileSync('public/users.json', JSON.stringify(users));
     }
     res.json(result);
@@ -114,6 +106,7 @@ app.post('/login', (req, res) => {
     }
     if (!result.error) {
         users.push({
+            id: users.length++,
             email: data.email,
             password: data.password,
             age: data.age,
