@@ -1,18 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataService } from './data.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  active = {
-  }
+export class AppComponent implements OnInit {
+  active = {};
   log:Boolean;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private data: DataService) {
+  }
 
+  ngOnInit(): void {
+    this.log = false;
+    this.data.observableLog.subscribe((valeur)=> {
+      this.log = valeur;
+    })
   }
 
   link = (link) => {

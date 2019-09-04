@@ -22,7 +22,6 @@ export class MenuComponent implements OnInit {
   faBookmark = faBookmark;
   faUserCircle = faUserCircle;
   linkLog = false;// Affiche login
-  @Output() log:EventEmitter<Boolean> = new EventEmitter();
 
   constructor(private router: Router, private data: DataService) { }
 
@@ -31,14 +30,15 @@ export class MenuComponent implements OnInit {
 
   logIn = () => {
     alert('connexion');
+    this.data.observableLog.next(true);
     this.linkLog = true;
-    this.log.emit(this.linkLog);
+    this.router.navigate(['/signIn']);
   }
 
   logOut = () => {
     alert('Deconnexion');
     this.linkLog = false;
-    this.log.emit(this.linkLog);
+    
     this.router.navigate(['/']);
     this.data.postApi('logOut',{}).subscribe((res: any) => {
       if(res.allowd) {
