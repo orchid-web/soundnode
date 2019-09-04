@@ -3,7 +3,7 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 import { HttpClient } from '@angular/common/http';
 import { DataService } from '../data.service';
-import { TrackModel } from '../models/track.model';
+
 
 @Component({
   selector: 'app-trackvue',
@@ -17,9 +17,7 @@ export class TrackvueComponent implements OnInit {
   faBookmark = faBookmark;
 
 
-  constructor(private data: DataService, private http: HttpClient) {
-    console.log(this.track);
-  }
+  constructor(private data: DataService, private http: HttpClient) {}
 
 
   ngOnInit() {
@@ -27,11 +25,17 @@ export class TrackvueComponent implements OnInit {
   }
 
   addLike = () => {
-    alert('ajoute à mes Like')
+    let nbLikes=0;
+    alert(this.track.idTrack);
+    nbLikes = this.track.nbLikes;
+    nbLikes ++;
+    //pousser nbLikes sur server tracks.json
+    //pousser l'Id track dans like.json avec comme id l'id User dans likes.json
+     alert (nbLikes);
   }
 
   addPlaylist = () => {
-    alert('ajoute à la PlayList')
+    alert(this.track.idTrack)
   }
 }
 

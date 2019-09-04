@@ -17,8 +17,7 @@ export class StreamComponent implements OnInit {
 
     this.http.get("http://localhost:8083/tracks").subscribe((res: TrackModel) => {
       this.tracks = res;
-      console.log(this.tracks);
-    })
+      })
   }
 
   ngOnInit() {
