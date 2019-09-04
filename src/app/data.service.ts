@@ -11,6 +11,7 @@ export class DataService {
   observableLinkLog : Subject<Boolean> = new Subject<Boolean>();
   obervableObserveLinkLog : Subject<Boolean> = new Subject<Boolean>();
   observableEmail : Subject<String> = new Subject<String>();
+  observableSearch : Subject<any> = new Subject<String>();
 
   constructor(private http: HttpClient) { }
 
