@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
+import { TrackModel } from '../models/track.model';
 
 @Component({
   selector: 'app-likes',
@@ -8,19 +9,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./likes.component.css']
 })
 export class LikesComponent implements OnInit {
-  // like = [] ;
-  constructor(private data: DataService, private router: Router) {
+ track: TrackModel;
+
+  constructor(private data: DataService, private router: Router, private http: HttpClient) {
     this.data.observableNavLog.next(false);
+    // this.http.get("http://localhost:8083/tracks").subscribe((res: TrackModel) => {
+    //   this.tracks = res;
   }
 
   ngOnInit() {
   }
-  // addLike =() =>{
-  //   this.data.postApi('likes', this.track.value).subscribe((res:any)=> {
-  //     if(for ){
-
-  //     }
-  //   })
-
-  // }
+  
 }

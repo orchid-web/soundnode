@@ -46,15 +46,20 @@ app.get('/tracks', function (req, res) {
     res.json(exResponse);
 })
 
-app.get('/likes', function (req, res) {
-    let exResponse = 'server Works!';
-    res.json(exResponse);
-})
+// app.get('/likes', function (req, res) {
+//     const id = req.body;
+//     let t = likes.filter(x=>x.userId==id);
+//     if(t){ for each elements of tracks if tracks.idTracks = likes.idtracks
+        
+//     }  
+
+//     let exResponse = 'server Works!';
+//     res.json(exResponse);
+// })
 
 //pour ajouter un like au tableau likes.json
 app.post('/likes', function (req, res) {
     const dataLike = req.body;
-   console.log (dataLike)
     result = {};
     result.error = false;
    
@@ -63,7 +68,7 @@ app.post('/likes', function (req, res) {
        idTrack: dataLike.idTrack
     })
         fs.writeFileSync('public/likes.json', JSON.stringify(likes));
-     res.json(dataLike.userId);   
+     //res.json(dataLike.userId);   
     
 })
 
