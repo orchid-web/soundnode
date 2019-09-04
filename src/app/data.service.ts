@@ -9,8 +9,7 @@ export class DataService {
   baseUrl = "http://localhost:8083/";
   observableLog : Subject<Boolean> = new Subject<Boolean>();
 
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) { }
 
   getApi = (lien, data) => {
     return this.http.get(this.baseUrl + lien, data);

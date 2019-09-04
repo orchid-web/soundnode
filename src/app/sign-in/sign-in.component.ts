@@ -23,7 +23,8 @@ export class SignInComponent implements OnInit {
     //Avec la deuxieme methode
     this.data.postApi('signIn', { email: this.signIn.value.email, password: this.signIn.value.password }).subscribe((res: any) => {
       if (res.allowd) {
-        localStorage.setItem("tokken", res.tokken);
+        localStorage.setItem("email", res.email);
+        localStorage.setItem("token", res.token);
         this.router.navigate(['/stream']);
         this.data.observableLog.next(false);
       } else {
