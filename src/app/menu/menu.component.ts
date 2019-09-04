@@ -22,10 +22,14 @@ export class MenuComponent implements OnInit {
   faBookmark = faBookmark;
   faUserCircle = faUserCircle;
   linkLog: Boolean;
+  email:String;
 
   constructor(private router: Router, private data: DataService) {
     this.data.obervableObserveLinkLog.subscribe((valeur) => {
       this.linkLog = valeur;
+    });
+    this.data.observableEmail.subscribe((valeur) => {
+      this.email = valeur;
     });
   }
 
@@ -37,6 +41,7 @@ export class MenuComponent implements OnInit {
   }
 
   logOut = () => {
+    this.email = "";
     this.router.navigate(['/']);
     this.data.postApi('logOut', {"token":localStorage.getItem("token")}).subscribe((res: any) => {
       if (res.allowd) {

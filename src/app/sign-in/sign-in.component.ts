@@ -25,6 +25,7 @@ export class SignInComponent implements OnInit {
       if (res.allowd) {
         localStorage.setItem("userId", res.id);
         localStorage.setItem("token", res.token);
+        this.data.observableEmail.next(res.email);
         this.router.navigate(['/stream']);
         this.data.observableNavLog.next(false);
         this.data.observableLinkLog.next(true);

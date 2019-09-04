@@ -72,6 +72,7 @@ app.post('/signIn', (req, res) => {
         result.allowd = true;
         u.token = (Math.random() * 10 + Math.random() * 10).toString(26);
         result.token = u.token;
+        result.email = u.email;
         result.id = u.id;
         fs.writeFileSync('public/users.json', JSON.stringify(users));
     }
