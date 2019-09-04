@@ -1,29 +1,43 @@
 <section class=container-fluide>
+ 
+
     <div class="row" id="photoAlbum">
-        <div class="col-4">
-            <img src="./assets/tracks/PixiesDoolittle.jpg">
+        <div>
+            <img src="{{this.track.phototrack}}">
+            
         </div>
     </div>
     <div class="row">
-        <div class="col-4 ligne" id="Title">
-            <span>{{ this.track.titleTrack }}</span>
+        <div class="ligne col-7 ligne1" id="Title">
+            <p>{{ this.track.titleTrack }}</p>
+        </div>
+        <div class="col-2 ligne1">
+            <p id="duration">{{this.track.duree}}</p>
+        </div>
+        <div class="offset-1 col-1 ligne1">
+            <fa-icon [icon]="faHeart" id ="nblikesrow"></fa-icon>
+        </div>
+        <div class="col-1 ligne1">
+            <p id="thisnbLikes">{{this.track.nbLikes}}</p>
         </div>
     </div>
     <div class="row">
-        <div class="col-4 ligne" id="Album">
-            <span>{{ this.track.resume }}</span>
+        <div class="ligne" id="Album">
+            <span>"{{this.track.artiste}} - {{ this.track.resume }}"</span>
         </div>
     </div>
     <div class="row">
-        <div class="col-4 ligne">
+        <div class="ligne">
             <div class="row">
-                <div class="col-2">
+                <div class="col-4">
                     <fa-icon [icon]="faHeart" (click)="addLike()"></fa-icon>
                 </div>
-                <div class='col-2'>
+                <div class='col-4'>
                     <fa-icon [icon]="faBookmark" (click)='addPlaylist ()'></fa-icon>
                 </div>
             </div>
         </div>
     </div>
+
+
 </section>
