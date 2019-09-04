@@ -1,7 +1,11 @@
+img {
+    width : 50%;
+}
+
 .player {
     width : 100%;
     background-color: black;
-    color: #Fff
+    color: #Fff;
 }
 .progress-volume {
     position: relative;
@@ -20,7 +24,5 @@
 }
 
 fa-icon {
-    color : white;
-    font-size : 5rem;
-    z-index : 0;
+    z-index : 999;
 }

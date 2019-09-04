@@ -1,11 +1,11 @@
 <div class="container-fluid player mb-5">
     <app-music-progress (changePosition)="changePosition($event)" [position]="position"></app-music-progress>
     <div class="row">
-        <div class="col-2"> </div>
-        <div class="col-7">
+        <div class="col-2"><img src="./assets/tracks/PixiesDoolittle.jpg" alt="couverture"> </div>
+        <div class="col">
             <div class="row">
                 <div class="col">
-                    {{track.title}}
+                    {{track.titleTrack}}
                 </div>
             </div>
             <div class="row">
@@ -14,22 +14,22 @@
                 </div>
             </div>
         </div>
-        <div class="col-3">
+        <div class="col-4">
             <div class="row">
                 <div class="col">
                     <fa-icon [icon]="faStepBackward" (click)="previous()"></fa-icon>
                 </div>
                 <div class="col">
-                    <i *ngIf="paused == false" class="fa fa-play" (click)="play()"></i>
-                    <i *ngIf="paused == true" class="fa fa-pause" (click)="pause()"></i>
+                    <fa-icon *ngIf="paused == false" [icon]="faPlay" (click)="play()"></fa-icon>
+                    <fa-icon *ngIf="paused == true" [icon]="faPause" (click)="pause()"></fa-icon>
                 </div>
                 <div class="col">
-                    <i class="fa fa-step-forward" (click)="next()"></i>
+                    <fa-icon [icon]="faStepForward" (click)="next()"></fa-icon>
                 </div>
             </div>
             <div class="row">
                 <div class="col-1">
-                    <i class="fa fa-volume-up"></i>
+                    <fa-icon [icon]="faVolumeUp"></fa-icon>
                 </div>
                 <div class="col">
                     <div #volumeRef class="progress-volume" (click)="changeVolume($event)">

@@ -22,4 +22,4 @@
     </div>
   </div>  
 </div>
-<app-player></app-player>
+<app-player [track]="trackTest" (nextEmiter)="nextTrack($event)" (previousEmiter)="previousTrack($event)"></app-player>

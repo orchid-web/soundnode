@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
       url :"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
     }
   ]
-  trackTest : TrackModel = this.tracks[1];
+  trackTest : TrackModel = this.tracks[0];
 
   constructor(private router: Router, private data: DataService) {
   }

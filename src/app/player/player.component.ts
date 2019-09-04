@@ -1,6 +1,10 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { TrackModel } from '../models/track.model';
 import { faStepBackward } from '@fortawesome/free-solid-svg-icons';
+import { faStepForward } from '@fortawesome/free-solid-svg-icons';
+import { faPlay } from '@fortawesome/free-solid-svg-icons';
+import { faPause } from '@fortawesome/free-solid-svg-icons';
+import { faVolumeUp } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-player',
@@ -9,6 +13,10 @@ import { faStepBackward } from '@fortawesome/free-solid-svg-icons';
 })
 export class PlayerComponent implements OnInit {
   faStepBackward = faStepBackward;
+  faStepForward = faStepForward;
+  faVolumeUp = faVolumeUp;
+  faPlay = faPlay;
+  faPause = faPause;
   @Input() track: TrackModel;
   audio;
   duration = 0;
