@@ -15,7 +15,7 @@ export class TrackvueComponent implements OnInit {
   @Input() track;
   faHeart = faHeart;
   faBookmark = faBookmark;
-
+  
 
   constructor(private data: DataService, private http: HttpClient) {}
 
@@ -25,13 +25,11 @@ export class TrackvueComponent implements OnInit {
   }
 
   addLike = () => {
-    let nbLikes=0;
-    alert(this.track.idTrack);
-    nbLikes = this.track.nbLikes;
-    nbLikes ++;
-    //pousser nbLikes sur server tracks.json
-    //pousser l'Id track dans like.json avec comme id l'id User dans likes.json
-     alert (nbLikes);
+     this.data.postApi('likesplus',{id : this.track.idTrack}).subscribe((res:any)=>{
+       let changeHeathColor = res;
+        
+       
+    })
   }
 
   addPlaylist = () => {

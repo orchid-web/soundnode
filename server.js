@@ -50,16 +50,24 @@ app.get('/tracks',function(req,res){
 })
 
 
-// app.post('/likes', function(req,res){
-//     likeCount = 0;
-//     let data = req.body;
-//     let currentIdTrack = userLike.find(x=>x.idTrack ==data.idTrack);
-//     if(currentIdTrack){ 
-//         likes[]likeCount = ++;
-//         likes.push({...data});
-//         fs.writeFileSync('public/likes.json', JSON.stringify(users));
-//     }
-// })
+app.post('/likesplus', (req,res)=>{
+    let exResponse = true;
+    let data = req.body;
+    
+        const t=tracks.find(x => x.idTrack==data.id)
+        let i = tracks.indexOf(t)
+        if (t){
+            newNbLikes = t.nbLikes
+            newNbLikes ++ 
+            tracks[i].nbLikes = newNbLikes
+            console.log (tracks[i].nbLikes)
+            fs.writeFileSync('public/tracks.json', JSON.stringify(tracks));
+            res.json(exResponse)
+            
+        }   else {
+            res.json(!exResponse)
+        }
+ })
 
 app.post('/isLogged', function (req, res) {
     let data = req.body;
