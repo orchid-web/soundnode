@@ -46,14 +46,7 @@ app.get('/tracks', function (req, res) {
     res.json(exResponse);
 })
 
-// app.get('/likes', function (req, res) {
-//     const id = req.body;
-//     let t = likes.filter(x=>x.userId==id);
-//     if(t){ for each elements of tracks if tracks.idTracks = likes.idtracks
-        
-//     }  
-
-<<<<<<< HEAD
+// Pour incrementer le nombre de Likes dans Tracks.json req : idtracks res : exResponse
 app.post('/likesplus', (req,res)=>{
     let exResponse = true;
     let data = req.body;
@@ -72,11 +65,6 @@ app.post('/likesplus', (req,res)=>{
             res.json(!exResponse)
         }
  })
-=======
-//     let exResponse = 'server Works!';
-//     res.json(exResponse);
-// })
->>>>>>> 88ded401d3c23b682109c46431ef90c578aedfba
 
 //pour ajouter un like au tableau likes.json
 app.post('/likes', function (req, res) {
@@ -87,9 +75,10 @@ app.post('/likes', function (req, res) {
     likes.push({ 
        userId: dataLike.userId,
        idTrack: dataLike.idTrack
+       
     })
         fs.writeFileSync('public/likes.json', JSON.stringify(likes));
-     //res.json(dataLike.userId);   
+     res.json(result);   
     
 })
 

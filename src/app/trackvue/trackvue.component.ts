@@ -19,15 +19,23 @@ export class TrackvueComponent implements OnInit {
 
   constructor(private data: DataService, private http: HttpClient) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
+  
   addLike = () => {
+    let nbLikes=0;
+    alert(this.track.idTrack);
+    this.track.nbLikes++;
+    
+    this.data.postApi('likesplus',{id : this.track.idTrack}).subscribe((res:any)=>{
+      let changeHeathColor = res;
+    })
     this.data.postApi('likes', { userId: localStorage.getItem("userId"), idTrack: this.track.idTrack }).subscribe((res: any) => {
-      if (res.error) {
+      if (!res.error) {
         alert("Error insertion");
       }
       else {
+        
         alert("like ajouté")
       }
     })
