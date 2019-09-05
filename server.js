@@ -46,16 +46,41 @@ app.get('/tracks', function (req, res) {
     res.json(exResponse);
 })
 
-// app.post('/likes', function(req,res){
-//     likeCount = 0;
-//     let data = req.body;
-//     let currentIdTrack = userLike.find(x=>x.idTrack ==data.idTrack);
-//     if(currentIdTrack){ 
-//         likes[]likeCount = ++;
-//         likes.push({...data});
-//         fs.writeFileSync('public/likes.json', JSON.stringify(users));
-//     }
-// })
+// Pour incrementer le nombre de Likes dans Tracks.json req : idtracks res : exResponse
+app.post('/likesplus', (req,res)=>{
+    let exResponse = true;
+    let data = req.body;
+    
+        const t=tracks.find(x => x.idTrack==data.id)
+        let i = tracks.indexOf(t)
+        if (t){
+            newNbLikes = t.nbLikes
+            newNbLikes ++ 
+            tracks[i].nbLikes = newNbLikes
+            console.log (tracks[i].nbLikes)
+            fs.writeFileSync('public/tracks.json', JSON.stringify(tracks));
+            res.json(exResponse)
+            
+        }   else {
+            res.json(!exResponse)
+        }
+ })
+
+//pour ajouter un like au tableau likes.json
+app.post('/likes', function (req, res) {
+    const dataLike = req.body;
+    result = {};
+    result.error = false;
+   
+    likes.push({ 
+       userId: dataLike.userId,
+       idTrack: dataLike.idTrack
+       
+    })
+        fs.writeFileSync('public/likes.json', JSON.stringify(likes));
+     res.json(result);   
+    
+})
 
 /*
     /signIn
