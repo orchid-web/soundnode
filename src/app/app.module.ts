@@ -16,6 +16,10 @@ import { LikesComponent } from './likes/likes.component';
 import { PlaylistsComponent } from './playlists/playlists.component';
 import { StreamComponent } from './stream/stream.component';
 import { DataService } from './data.service';
+import { PlayerComponent } from './player/player.component';
+import { MusicProgressComponent } from './music-progress/music-progress.component';
+import { FormattimePipe } from './formattime.pipe';
+import { PourcentagePipe } from './pourcentage.pipe';
 
 const routes:Routes = [
   {path:'', component:StreamComponent},
@@ -37,7 +41,11 @@ const routes:Routes = [
     MenuComponent,
     LikesComponent,
     PlaylistsComponent,
-    StreamComponent
+    StreamComponent,
+    PlayerComponent,
+    MusicProgressComponent,
+    FormattimePipe,
+    PourcentagePipe
   ],
   imports: [
     BrowserModule,

@@ -1,13 +1,13 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-2 px-0 pt-2 bg-dark">
-      <app-menu (log)="displayForm($event)"></app-menu>
+      <app-menu></app-menu>
     </div>
     <div class="col p-0 body">
-      <app-header></app-header>
+      <app-header ></app-header>
       
-      <div *ngIf="log" class="container pt-5">
-        <ul class="nav nav-tabs">
+      <div *ngIf="navLog" class="container pt-5">
+        <ul class="nav nav-tabs text-white">
           <li class="nav-item">
             <a class="nav-link" [class.active]="active.signIn" (click)="link('signIn')">Sign In</a>
           </li>
@@ -18,14 +18,8 @@
         </ul>
         
       </div>
-      
       <router-outlet></router-outlet>
     </div>
-   
-      
-  </div>
-  
+  </div>  
 </div>
-
-
-
+<app-player></app-player>
