@@ -15,12 +15,13 @@ import { MenuComponent } from './menu/menu.component';
 import { LikesComponent } from './likes/likes.component';
 import { PlaylistsComponent } from './playlists/playlists.component';
 import { StreamComponent } from './stream/stream.component';
+//DataService fonctionnement via server.js JSON, remplacer par notre API .NET CORE
 import { DataService } from './data.service';
 import { PlayerComponent } from './player/player.component';
 import { MusicProgressComponent } from './music-progress/music-progress.component';
 import { FormattimePipe } from './formattime.pipe';
 import { PourcentagePipe } from './pourcentage.pipe';
-
+import { ApiService } from './api.service';
 const routes:Routes = [
   {path:'', component:StreamComponent},
   {path:'signIn', component:SignInComponent},
@@ -56,7 +57,7 @@ const routes:Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [DataService],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
